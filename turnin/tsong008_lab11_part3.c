@@ -44,6 +44,8 @@ void Rec_Tick(){
 			PORTD = ~row[i];
 			State = Seq_1;
 			break;
+		default:
+			break;
 	}
 }
 
