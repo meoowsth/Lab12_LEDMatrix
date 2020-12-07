@@ -7,7 +7,7 @@
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
  *
- *	Demo link:
+ *	Demo link: https://drive.google.com/file/d/1Qj5TfG3_iy2_73iN8MkoqX8YTv0rSokL/view?usp=sharing
  */
 #include <avr/io.h>
 #ifdef _SIMULATE_
@@ -57,7 +57,7 @@ void Rec_Tick(){
 
 enum Button_States {Button_Start, Button_Wait} Button_State;
 
-void Button_Poll() {
+void Button_Tick() {
 	switch(Button_State){
 		case Button_Start:
 			Button_State = Button_Wait;
@@ -85,6 +85,8 @@ void Button_Poll() {
 			}
 			Button_State = Button_Wait;
 			break;
+		default:
+			break;
 	}
 }
 
@@ -107,7 +109,7 @@ int main(void) {
 		pressCounter++;
 	}
 	else {
-		Button_Poll();
+		Button_Tick();
 		pressCounter = 0;
 	}
 	Rec_Tick();

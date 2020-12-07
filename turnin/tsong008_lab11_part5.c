@@ -7,7 +7,7 @@
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
  *
- *	Demo link:
+ *	Demo link: https://drive.google.com/file/d/1keUcA-Qt7ddjYLAUSvAaVYLArxI-V_JP/view?usp=sharing
  */
 #include <avr/io.h>
 #ifdef _SIMULATE_
@@ -124,6 +124,7 @@ int main(void) {
 	TimerOn();
     /* Insert your solution below */
     while (1) {
+	tempA = ~PINA;
 	if (pressCounter < 100){
 		pressCounter++;
 	} else {
